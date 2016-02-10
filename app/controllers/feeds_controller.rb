@@ -5,6 +5,7 @@ class FeedsController < ApplicationController
   # GET /feeds.json
   def index
     @feeds = Feed.all
+    @topten = Feed.find_by(name: 'Cougarboard Top 10')
   end
 
   # GET /feeds/1
