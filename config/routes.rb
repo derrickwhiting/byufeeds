@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'entries/index'
+
+  get 'entries/show'
+
   resources :feeds
   
   root 'feeds#index'
