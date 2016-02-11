@@ -14,4 +14,15 @@ namespace :sync do
       p "Synced Feed - #{feed.name}"
     end
   end
+
+  desc "Add new feed"
+  task feed: :environment do
+    # Feed.all.each do |feed|
+    #   feed.entries.destroy_all
+    # end
+    feed = Feed.new
+    feed.name = 'Cougarboard Top 10'
+    feed.url = 'http://www.cougarboard.com/rss/board.html'
+    feed.description = 'Top 10 posts on cougarboard.com'
+    feed.save
 end
