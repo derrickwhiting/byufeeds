@@ -6,6 +6,7 @@ class FeedsController < ApplicationController
   def index
     @feeds = Feed.all
     @topten = Feed.find_by(name: 'Cougarboard Top 10')
+    @videos = Feed.find_by(name: 'cougarboard video feed')
   end
 
   # GET /feeds/1
