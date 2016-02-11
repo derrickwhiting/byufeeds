@@ -1,9 +1,9 @@
 namespace :sync do
   desc "Get new Feeds"
   task feeds: :environment do
-    # Feed.all.each do |feed|
-    #   feed.entries.destroy_all
-    # end
+    Feed.all.each do |feed|
+      feed.entries.delete_all
+    end
     Feed.all.each do |feed|
       content = Feedjira::Feed.fetch_and_parse feed.url
       content.entries.each do |entry|
