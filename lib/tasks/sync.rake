@@ -25,4 +25,5 @@ namespace :sync do
     feed.url = 'http://www.cougarboard.com/rss/board.html'
     feed.description = 'Top 10 posts on cougarboard.com'
     feed.save
+  end
 end
